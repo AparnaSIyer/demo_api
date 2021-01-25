@@ -1,9 +1,12 @@
 const Product = require('../models/Product');
 const Review = require('../models/Review');
+const { BrandModel, CatalogModel } = require('../models/NestedModel');
 exports.saveProduct = async (productData) => {
     let product = new Product({
         name: productData.name,
-        quantity: productData.quantity
+        quantity: productData.quantity,
+        catalog: productData.catalog,
+        brand: productData.brand
     });
 
     try {

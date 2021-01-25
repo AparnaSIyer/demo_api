@@ -10,11 +10,8 @@ var ProductSchema = new Schema({
         type: Number,
         required: true
     },
-    departments: {
-        type: Array,
-        required: false
-    }
+    catalog: { type: Schema.Types.ObjectId, ref: 'catalog' },
+    brand: { type: Schema.Types.ObjectId, ref: 'brand' }
 });
-
 var Product = mongoose.model('Product', ProductSchema);
 module.exports = Product;
